@@ -731,11 +731,11 @@ void save_image_options(image im, const char *name, IMTYPE f, int quality)
 {
     char buff[256];
     //sprintf(buff, "%s (%d)", name, windows);
-    if (f == PNG)       sprintf(buff, "%s.png", name);
-    else if (f == BMP) sprintf(buff, "%s.bmp", name);
-    else if (f == TGA) sprintf(buff, "%s.tga", name);
-    else if (f == JPG) sprintf(buff, "%s.jpg", name);
-    else               sprintf(buff, "%s.png", name);
+    if (f == PNG)       sprintf(buff, "%sprediction.png", name);
+    else if (f == BMP) sprintf(buff, "%sprediction.bmp", name);
+    else if (f == TGA) sprintf(buff, "%sprediction.tga", name);
+    else if (f == JPG) sprintf(buff, "%sprediction.jpg", name);
+    else               sprintf(buff, "%sprediction.png", name);
     unsigned char* data = (unsigned char*)xcalloc(im.w * im.h * im.c, sizeof(unsigned char));
     int i, k;
     for (k = 0; k < im.c; ++k) {
